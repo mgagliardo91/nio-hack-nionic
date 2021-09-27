@@ -1,0 +1,42 @@
+mutation {
+  address: createAddress(input:{
+    address: {
+      street1: "224 Fayetteville St",
+      zipCode: "27601"
+    }
+  }) { address { id } },
+  provider: createUtilityProvider(input:{
+    utilityProvider:{
+      name: "Duke Energy"
+    }
+  }) { utilityProvider { id }},
+  account: createUtilityAccount(input:{
+    utilityAccount:{
+      accountId: "A4",
+      contact: "michael@ndustrial.io",
+      addressId:1,
+      utilityProviderId:1
+    }
+  }) { utilityAccount { id }},
+  meter:createUtilityMeter(input:{
+    utilityMeter: {
+      isActivated:true,
+      utilityAccountId: 1,
+      facilityId:1
+    }
+  }) { utilityMeter { id } }
+  statement:createUtilityStatement(input:{
+    utilityStatement: {
+      pdf:"https://utilityapi.com/api/v2/bills",
+      statementDate:"2020-02-03",
+      startDate:"2020-01-01",
+      endDate:"20202-02-01"
+    }
+  }) { utilityStatement {id } },
+  t: createUtilityMeterUtilityStatement(input:{
+    utilityMeterUtilityStatement: {
+      utilityMeterId:1,
+      utilityStatementId:2
+    }
+  }) { utilityMeterUtilityStatement { utilityMeterId, utilityStatementId }}
+}

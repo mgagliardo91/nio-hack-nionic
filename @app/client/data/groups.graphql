@@ -1,0 +1,45 @@
+mutation {
+  main:createFacilityGroup(input:{
+    facilityGroup: {
+      name:"Main Offices"
+    }
+  }){ facilityGroup {id }},
+  remote:createFacilityGroup(input:{
+    facilityGroup: {
+      name:"Remote Offices"
+    }
+  }){ facilityGroup {id }},
+  mikes:createFacilityGroup(input:{
+    facilityGroup: {
+      name:"Mike's Offices"
+    }
+  }){ facilityGroup {id }},
+}
+
+
+mutation {
+  main:createFacilityGroupFacility(input:{
+    facilityGroupFacility: {
+      facilityId: 1,
+      facilityGroupId:1
+    }
+  }) { facility {id} facilityGroup {id} },
+  remote:createFacilityGroupFacility(input:{
+    facilityGroupFacility: {
+      facilityId: 2,
+      facilityGroupId: 2
+    }
+  }) { facility {id} facilityGroup {id} },
+  mike_main:createFacilityGroupFacility(input:{
+    facilityGroupFacility: {
+      facilityId: 1,
+      facilityGroupId: 3
+    }
+  }) { facility {id} facilityGroup {id} },
+	mike_remote:createFacilityGroupFacility(input:{
+    facilityGroupFacility: {
+      facilityId: 2,
+      facilityGroupId: 3
+    }
+  }) { facility {id} facilityGroup {id} },
+}

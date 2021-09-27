@@ -1,0 +1,30 @@
+type Address @entity {
+  street1: String
+  street2: String
+  zipCode: String
+}
+
+type UtilityProvider @entity(auditable:true) {
+  name: String
+}
+
+type UtilityAccount @entity(auditable:true) {
+  accountId: String
+  contact: String
+  address: Address
+  utilityProvider: UtilityProvider
+}
+
+type UtilityStatement @entity(auditable:true) {
+  pdf: String
+  statementDate: Datetime
+  startDate: Datetime
+  endDate: Datetime
+}
+
+type UtilityMeter @entity(auditable:true) {
+  is_activated: Boolean
+  utilityAccount: UtilityAccount
+  facility: Facility
+  statements: [UtilityStatement]
+}

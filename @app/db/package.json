@@ -1,0 +1,16 @@
+{
+  "name": "@app/db",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "graphile-migrate watch",
+    "migrate": "graphile-migrate migrate",
+    "commit": "graphile-migrate commit",
+    "uncommit": "graphile-migrate uncommit",
+    "reset": "graphile-migrate reset --erase",
+    "dump": "graphile-migrate migrate && graphile-migrate reset --shadow --erase && graphile-migrate migrate --shadow --forceActions"
+  },
+  "dependencies": {
+    "graphile-migrate": "^1.0.2"
+  }
+}

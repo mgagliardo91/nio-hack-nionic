@@ -1,0 +1,5 @@
+type FacilityGroup @entity {
+  name: String!
+  facilities: [Facility!]
+}
+

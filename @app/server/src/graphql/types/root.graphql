@@ -1,0 +1,15 @@
+directive @test on OBJECT
+
+"""
+Marks an type as an Entity.
+"""
+directive @entity(
+  """
+  Creates created_at and updated_at fields.
+  """
+  auditable: Boolean = false
+) on OBJECT
+
+extend type MyTest {
+  myField: String @test
+}

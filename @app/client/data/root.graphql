@@ -1,0 +1,44 @@
+mutation {
+  org:createOrganization(input:{
+    organization:{
+      slug: "ndustrial",
+      name: "ndustrial"
+    }
+  }) {
+    organization {
+      id
+    }
+  },
+  raleigh: createFacility(input:{
+    facility:{
+      slug: "raleigh",
+      name: "HQ - Raleigh",
+      organizationId: 1
+    }
+  }) {
+    facility {
+      id
+    }
+  },
+  michael: createFacility(input:{
+    facility:{
+      slug: "michael",
+      name: "Michael's House - Raleigh",
+      organizationId: 1
+    }
+  }) {
+    facility {
+      id
+    }
+  }
+}
+
+
+mutation {
+    createUtilityMeterUtilityStatement(input:{
+    utilityMeterUtilityStatement: {
+      utilityMeterId:1,
+      utilityStatementId:1
+    }
+  }) { utilityMeterUtilityStatement { utilityMeterId, utilityStatementId }}
+}

@@ -1,0 +1,57 @@
+@import '~antd/dist/antd.css';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nio-skeleton {
+  padding: 30px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-self: center;
+  margin: auto;
+}
+
+// ANT overrides
+
+.ant-empty {
+  margin-top: 100px;
+}
+
+.ant-alert {
+  &.ant-alert-error {
+    .ant-alert-message {
+      color: #b14546;
+    }
+  }
+
+  .ant-alert-message {
+    font-weight: bold;
+  }
+
+  .ant-alert-description {
+    font-style: italic;
+    font-size: 0.9em;
+  }
+}
+
+.ant-tag-checkable {
+  border: 1px solid rgb(165, 165, 165);
+
+  &.ant-tag-checkable-checked {
+    border: 1px solid #1890ff;
+  }
+}
